@@ -1,10 +1,10 @@
 {
   "name": "my-wdio",
   "version": "1.0.0",
-  "description": "",
+  "description": "A sample Webdriver.io project for testing purposes.",
   "main": "index.js",
   "scripts": {
-    "selenium": "selenium-standalone start",
+    "selenium": "selenium-standalone install && selenium-standalone start",
     "test": "wdio wdio.conf.js"
   },
   "repository": {
