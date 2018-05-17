@@ -1,0 +1,31 @@
+{
+  "name": "my-wdio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "selenium": "selenium-standalone start",
+    "test": "wdio wdio.conf.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/serbanghita/my-wdio.git"
+  },
+  "author": "Serban Ghita",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/serbanghita/my-wdio/issues"
+  },
+  "homepage": "https://github.com/serbanghita/my-wdio#readme",
+  "devDependencies": {
+    "babel-preset-es2015": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "chai": "^4.1.2",
+    "mocha": "^5.1.1",
+    "selenium-standalone": "^6.14.1",
+    "wdio-dot-reporter": "^0.0.9",
+    "wdio-mocha-framework": "^0.5.13",
+    "wdio-spec-reporter": "^0.1.4",
+    "webdriverio": "^4.12.0"
+  }
+}
