@@ -1,4 +1,4 @@
-version: 2
+version: "2"
 
 services:
 
@@ -7,13 +7,15 @@ services:
       context: .
       dockerfile: Dockerfile
     networks:
-      - testing-network
+      - testing-lan
 
   seleniumapp:
     image: serbanghita/selenium-standalone
+    ports:
+      - "4444:4444"
     networks:
-      - testing-network
+      - testing-lan
 
 networks:
-  testing-network:
+  testing-lan:
     driver: bridge

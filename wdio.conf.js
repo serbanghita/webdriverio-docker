@@ -13,7 +13,7 @@ exports.config = {
     // according to your user and key information. However, if you are using a private Selenium
     // backend you should define the host address, port, and path here.
     //
-    host: 'localhost',
+    host: "seleniumapp",
     port: 4444,
     path: '/wd/hub',
     
@@ -56,16 +56,21 @@ exports.config = {
     // https://docs.saucelabs.com/reference/platforms-configurator
     //
     capabilities: [{
-        // maxInstances can get overwritten per capability. So if you have an in-house Selenium
-        // grid with only 5 firefox instances available you can make sure that not more than
-        // 5 instances get started at a time.
-        maxInstances: 1,
-        //
-        browserName: 'chrome',
-        chromeOptions: {
-            args: ['--headless']
+            // maxInstances can get overwritten per capability. So if you have an in-house Selenium
+            // grid with only 5 firefox instances available you can make sure that not more than
+            // 5 instances get started at a time.
+            maxInstances: 1,
+            //
+            browserName: 'chrome',
+            chromeOptions: {
+                args: ['--headless']
+            }
+        },
+        {
+            maxInstances: 1,
+            browserName: 'firefox',
         }
-    }],
+    ],
     //
     // ===================
     // Test Configurations
