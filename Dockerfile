@@ -47,6 +47,7 @@ RUN node --version
 RUN npm --version
 
 RUN ["npm", "install"]
+CMD tail -f /dev/null
 #RUN curl http://localhost:4444
-ENTRYPOINT ["npm", "test"]
+#ENTRYPOINT ["npm", "test"]
 

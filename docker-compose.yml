@@ -1,0 +1,19 @@
+version: 2
+
+services:
+
+  testapp:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    networks:
+      - testing-network
+
+  seleniumapp:
+    image: serbanghita/selenium-standalone
+    networks:
+      - testing-network
+
+networks:
+  testing-network:
+    driver: bridge
