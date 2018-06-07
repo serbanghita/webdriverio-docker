@@ -10,7 +10,7 @@ services:
       - testing-lan
 
   seleniumapp:
-    image: serbanghita/selenium-standalone
+    image: serbanghita/selenium-standalone:latest
     ports:
       - "4444:4444"
     networks:

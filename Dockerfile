@@ -6,6 +6,10 @@ ENV LC_ALL=C
 ENV DEBIAN_FRONTEND=noninteractive
 ENV DEBCONF_NONINTERACTIVE_SEEN=true
 
+RUN groupadd --gid 1000 node \
+  && useradd --uid 1000 --gid node --shell /bin/bash --create-home node
+
+
 RUN apt-get -qqy update
 RUN apt-get -qqy install \
     apt-transport-https \
@@ -33,21 +37,22 @@ RUN apt-get -qqy --no-install-recommends install \
   xfonts-scalable \
   xfonts-cyrillic
 
-RUN useradd -d /home/testuser -m testuser
-RUN mkdir -p /home/testuser
-RUN chown testuser:testuser /home/testuser
-ADD . /home/testuser
-WORKDIR /home/testuser
 
 RUN export DISPLAY=:99.0
 RUN Xvfb :99 -shmem -screen 0 1366x768x16 &
+
+WORKDIR /home/node
+ADD . .
+RUN chown node:node -R .
+RUN chmod 777 -R .
+
 RUN google-chrome --version
 RUN firefox --version
 RUN node --version
 RUN npm --version
 
-RUN ["npm", "install"]
-CMD tail -f /dev/null
-#RUN curl http://localhost:4444
-#ENTRYPOINT ["npm", "test"]
+USER node
+RUN npm install
+
+ENTRYPOINT ["tail", "-f", "/dev/null"]
 

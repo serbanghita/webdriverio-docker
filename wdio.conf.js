@@ -16,7 +16,7 @@ exports.config = {
     host: "seleniumapp",
     port: 4444,
     path: '/wd/hub',
-    
+
     //
     // ==================
     // Specify Test Files
@@ -49,7 +49,7 @@ exports.config = {
     // and 30 processes will get spawned. The property handles how many capabilities
     // from the same test should run tests.
     //
-    maxInstances: 10,
+    maxInstances: 2,
     //
     // If you have trouble getting all important capabilities together, check out the
     // Sauce Labs platform configurator - a great tool to configure your capabilities:
@@ -63,12 +63,19 @@ exports.config = {
             //
             browserName: 'chrome',
             chromeOptions: {
-                args: ['--headless']
+                "args": [ "disable-extensions", "headless", "disable-gpu", "no-sandbox" ]
             }
         },
         {
             maxInstances: 1,
             browserName: 'firefox',
+            "moz:firefoxOptions": {
+                args: [ "-headless" ],
+                prefs: {
+                    // Prevent opening the extension tabs on startup
+                    "extensions.enabledScopes": 0
+                }
+            }
         }
     ],
     //
