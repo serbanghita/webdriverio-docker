@@ -9,17 +9,18 @@ See `selenium-standalone` Docker instance declaration
 
 **Run**
 
-* `docker-compose up` (` -d --build --force-recreate`)
-* `docker-compose ps`
+1. `git clone git@github.com:serbanghita/my-wdio.git`
+1. `cd my-wdio`
+1. `docker-compose up` (` -d --build --force-recreate`)
+1. `docker-compose ps`
 
-```
-        Name                 Command        State           Ports
---------------------------------------------------------------------------
-my-wdio_seleniumapp_1   npm run selenium    Up      0.0.0.0:4444->4444/tcp
-my-wdio_testapp_1       tail -f /dev/null   Up
-```
+                Name                 Command        State           Ports
+        --------------------------------------------------------------------------
+        my-wdio_seleniumapp_1   npm run selenium    Up      0.0.0.0:4444->4444/tcp
+        my-wdio_testapp_1       tail -f /dev/null   Up
 
-* `docker exec my-wdio_testapp_1 npm run test` - You should see tests pass
+
+1. `docker exec my-wdio_testapp_1 npm run test` - You should see tests pass
 
 
 **Wiki**
