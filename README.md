@@ -1,7 +1,5 @@
-## E2E using Webdriver.io and selenium-setup in Docker
-> For testing purposes.
-
-Sample of project running E2E tests with `wdio` and `selenium-standalone`
+## E2E using [Webdriver.io](https://github.com/webdriverio/webdriverio) and [selenium-standalone](https://github.com/vvo/selenium-standalone) in Docker
+> Sample of project running E2E tests with `wdio` and `selenium-standalone`
 each existing in separate Docker instances.
 
 See `selenium-standalone` Docker instance declaration
@@ -9,7 +7,7 @@ See `selenium-standalone` Docker instance declaration
 
 **Run**
 
-1. `git clone git@github.com:serbanghita/my-wdio.git`
+1. `git clone git@github.com:serbanghita/webdriverio-docker.git`
 1. `cd my-wdio`
 1. `docker-compose up` (` -d --build --force-recreate`)
 1. `docker-compose ps`
