@@ -1,4 +1,4 @@
-## Sample Webdriver.io project
+## E2E using Webdriver.io and selenium-setup in Docker
 > For testing purposes.
 
 Sample of project running E2E tests with `wdio` and `selenium-standalone`
